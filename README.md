@@ -10,10 +10,10 @@ Through extensive cross validation and ablation studies, FusionAttenNet demonstr
 This study not only highlights the effectiveness of integrating cortical and phenotypic data but also sets a precedent for employing advanced machine learning techniques in psychiatric research. The proposed framework opens avenues for more accurate, interpretable, and clinically relevant ADHD prediction models, paving the way for personalized diagnostics and targeted interventions.
 
 ## Three step pipeline for 3D vertex-wise sMRI to 512*512 2D four-channelled images
-<img width="1208" alt="3d_to_2d" src="https://github.com/user-attachments/assets/7d12c95f-b181-4203-a8a7-3dd710399111" />
+<img width="1100" alt="3d_to_2d" src="https://github.com/user-attachments/assets/7d12c95f-b181-4203-a8a7-3dd710399111" />
 
 ## Archtecture of FusionAttenNet
-<img width="1234" alt="ml_model" src="https://github.com/user-attachments/assets/aa14de1f-2095-4d91-b2af-0383bacea88d" />
+<img width="1100" alt="ml_model" src="https://github.com/user-attachments/assets/aa14de1f-2095-4d91-b2af-0383bacea88d" />
 
 
 
