@@ -1,5 +1,5 @@
 # FusionAttenNet
-This is my Master's graduation project.
+This is my Master's graduation project, collaborating with Erasmus Medical Center.
 
 ## Abstract for this project
 
