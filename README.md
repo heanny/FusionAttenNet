@@ -15,6 +15,24 @@ This study not only highlights the effectiveness of integrating cortical and phe
 ## Archtecture of FusionAttenNet
 <img width="1100" alt="ml_model" src="https://github.com/user-attachments/assets/aa14de1f-2095-4d91-b2af-0383bacea88d" />
 
+## Future work
+<ol>
+<li>North pole alignment in Mercator projection
+Instead of fixing one arbitrary orientation, different north-pole settings could be tested. By selecting a small set of predefined orientations and distributing transformed datasets evenly across them, the projection artefacts caused by 3D→2D flattening may be reduced.
+
+<li> Reducing rotation sensitivity (P3CNN-inspired approach)
+The potential sensitivity to cortical surface rotations observed in this thesis could be alleviated by adopting ideas from the P3CNN paper. Their pipeline uses:
+
+- KNN interpolation with inverse distance weighting (Shepard interpolation) to better handle the mismatch between a FreeSurfer triangular mesh and the regular latitude–longitude pixel grid.
+
+- Multi-view alignment: the sphere is rotated such that the north pole aligns with X, Y, and Z axes separately, projected to 2D, and reconstructed back to 3D; results are averaged to reduce orientation bias.
+
+<li>Site-split evaluation
+Future experiments should evaluate generalization under a site-split setting, where training and testing come from different acquisition sites/scanners. This helps quantify dataset shift and ensures robustness across cohorts.
+
+<li> Graph-based models
+Projection-free methods such as graph neural networks (GNNs) on the cortical mesh may bypass 3D→2D artefacts altogether, preserving neighborhood structure and potentially improving interpretability.
+</ol>
 
 
 
