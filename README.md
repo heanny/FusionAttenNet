@@ -15,24 +15,46 @@ This study not only highlights the effectiveness of integrating cortical and phe
 ## Archtecture of FusionAttenNet
 <img width="1100" alt="ml_model" src="https://github.com/user-attachments/assets/aa14de1f-2095-4d91-b2af-0383bacea88d" />
 
+## Highlights
+
+- Innovative Model Design: FusionAttenNet, a ResNet-50-based architecture enhanced with spatial, channel,
+and feature attention mechanisms, optimized for ADHD prediction.
+
+- Dual-Task Prediction: Simultaneous prediction of attention problem scores and age, providing
+deeper insights into ADHD-related neurodevelopmental patterns.
+
+- Multi-Modal Data Fusion: Integration of cortical features with key phenotypic data (sex,
+maternal educational level, CBCL 6-18 aggressive behaviour scores) for more comprehensive
+modelling.
+
+- Enhanced Predictive Accuracy: Achieved higher $R^2$ scores than traditional baselines, demonstrating
+substantial improvements within ADHD research. Its robustness was validated through cross-validation, residual and error distribution analyses, and a series of ablation studies.
+
+- Efficient 3D-to-2D Data Transformation: Facilitated the use of CNNs while retaining critical
+spatial brain information, streamlining data processing and model training.
+
 ## Future work
 <ol>
 <li>North pole alignment in Mercator projection
-Instead of fixing one arbitrary orientation, different north-pole settings could be tested. By selecting a small set of predefined orientations and distributing transformed datasets evenly across them, the projection artefacts caused by 3D→2D flattening may be reduced.
+ 
+Instead of fixing one arbitrary orientation, different north-pole settings could be tested. By selecting a small set of predefined orientations and distributing transformed datasets evenly across them, the projection artefacts introduced by 3D→2D flattening may be mitigated. A systematic check for sensitivity to north-pole angle is therefore necessary. From our preliminary sample tests, there is a possibility of moderate performance degradation under certain misalignments, although more extensive evaluation would be required to draw firm conclusions.
+
 
 <li> Reducing rotation sensitivity (P3CNN-inspired approach)
-The potential sensitivity to cortical surface rotations observed in this thesis could be alleviated by adopting ideas from the P3CNN paper. Their pipeline uses:
+  
+The potential sensitivity to cortical surface rotations observed in this thesis could be alleviated by adopting ideas from the P3CNN paper[^1]. Their pipeline uses:
+
+[^1]: Henschel L, Reuter M. Parameter Space CNN for Cortical Surface Segmentation. Bildverarb Med. 2020 Mar;2020:216-221. doi: 10.1007/978-3-658-29267-6_49. Epub 2020 Feb 12. PMID: 36637373; PMCID: PMC9832244.
 
 - KNN interpolation with inverse distance weighting (Shepard interpolation) to better handle the mismatch between a FreeSurfer triangular mesh and the regular latitude–longitude pixel grid.
 
 - Multi-view alignment: the sphere is rotated such that the north pole aligns with X, Y, and Z axes separately, projected to 2D, and reconstructed back to 3D; results are averaged to reduce orientation bias.
 
 <li>Site-split evaluation
+  
 Future experiments should evaluate generalization under a site-split setting, where training and testing come from different acquisition sites/scanners. This helps quantify dataset shift and ensures robustness across cohorts.
 
 <li> Graph-based models
+  
 Projection-free methods such as graph neural networks (GNNs) on the cortical mesh may bypass 3D→2D artefacts altogether, preserving neighborhood structure and potentially improving interpretability.
 </ol>
-
-
-
